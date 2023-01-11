@@ -2,13 +2,13 @@
 #include<stdlib.h>
 
 
-    struct stack{
+    struct s{
         int size;
         int top;
         int *arr;
     };
     
-     int isFull(struct stack *ptr){
+     int isFull(struct s *ptr){
       if(ptr->top==ptr->size-1){
         return 1;
       }
@@ -20,7 +20,7 @@
      }
      }
 
-     int isEmpty(struct stack *ptr){
+     int isEmpty(struct s *ptr){
         if(ptr->top==-1){
             return 1;
         }
@@ -29,7 +29,7 @@
         
         }
      }
-     void push(struct stack* ptr,int val){
+     void push(struct s* ptr,int val){
         if(isFull(ptr)){
             printf("overflow");
             
@@ -39,7 +39,7 @@
             ptr->top++;
         }
      } 
-      void pop(struct stack* ptr, int val){
+      void pop(struct s* ptr, int val){
         if(isEmpty(ptr)){
             printf("underflow");
         }
@@ -51,11 +51,11 @@
    int main()
    {
     int ch;
-    struct stack *sp =(struct stack *) malloc(sizeof(struct stack));
+    struct s *sp =(struct s *) malloc(sizeof(struct s));
     sp->size=5;
      sp->top=-1;
      sp->arr=(int *)malloc(sp->size*sizeof(int));
-     printf(" stack created is sucess fully");
+     printf(" s created is sucess fully");
      printf(" \n 1. push");
      printf("\n 2. pop");
      printf("\n 3. display");
@@ -109,20 +109,20 @@
 
 
 /*
-struct stack *sp{
+struct s *sp{
     s->size;
     s->top;
     s->*arr;
 }
 
 op1->push
-struct stack *sp;
+struct s *sp;
 sp->size=8;
 sp->top=-1;
 sp->arr=(int*)malloc(size->size*sizeof(int));
 push()
 if(isFull(sp)){
-    printf("stack overflow");
+    printf("s overflow");
     else{
         sp->top++;
         sp->arr[sp->top]=val;
@@ -132,7 +132,7 @@ if(isFull(sp)){
 }
 pop()
 if(isEmpty(sp)){
-    printf(" stack underflow");
+    printf(" s underflow");
     else
     {
         int val  = sp->arr[sp->top];

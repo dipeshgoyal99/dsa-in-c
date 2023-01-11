@@ -1,32 +1,32 @@
 #include<stdio.h>
 #include<stdlib.h>
 #define MAX 4
-int stack[MAX],item;
+int s[MAX],item;
 int choice,top=-1,count=0,status=0;
-void push(int stack[],int item)
+void push(int s[],int item)
 {
     if(top==(MAX-1))
     {
-        printf(" stack is overflow");
+        printf(" s is overflow");
     }
     else
     {
-        stack[++top]=item;
+        s[++top]=item;
         status++;
     }
 }
 
-int pop(int stack[])
+int pop(int s[])
 {
 
     int val;
     if(top==-1)
     {
-        printf(" stack is underflow");
+        printf(" s is underflow");
     }
     else
     {
-       val= stack[top--];
+       val= s[top--];
         status--;
         printf("\n %d pops element",val);
     }
@@ -34,26 +34,26 @@ int pop(int stack[])
 }
 
 
-void peek(int stack[])
+void peek(int s[])
 {
 
     int i;
-    printf(" \n stack content are\n");
+    printf(" \n s content are\n");
     if(top==-1)
     {
-        printf(" stack is empty");
+        printf(" s is empty");
     }
     else
     {
        for(i=top;i>=0;i--)
        {
-        printf("\n --\n |%d|",stack[i]);
+        printf("\n --\n |%d|",s[i]);
         printf("\n");
        }
     
     }
 }
-   void main()
+   int main()
    {
      do
     {
@@ -66,19 +66,19 @@ void peek(int stack[])
             {
                 printf("enter the element to pused");
                 scanf("%d",&item);
-                push(stack,item);
-                peek(stack);
+                push(s,item);
+                peek(s);
                 break;
             }
             case 2:
             {
-                item=pop(stack);
-               peek(stack);
+                item=pop(s);
+               peek(s);
                 break;
             }
             case 3:
             {
-                peek(stack);
+                peek(s);
                 break;
             }
             case 4:
@@ -94,7 +94,7 @@ void peek(int stack[])
         }
     }
     while(choice!=4);
-
+return 0;
 }
    
 
